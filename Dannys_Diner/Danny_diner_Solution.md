@@ -60,8 +60,6 @@ order by c.customer_id;
 | B           | 74          |
 | C           | 36          |
 
-- Customer A, B and C spent $76, $74 and $36 respectivly.
-
 ***
 
 ### 2. How many days has each customer visited the restaurant?
@@ -78,8 +76,6 @@ group by customer_id;
 | A           | 4            |
 | B           | 6            |
 | C           | 2            |
-
-- Customer A, B and C visited 4, 6 and 2 times respectivly.
 
 ***
 
@@ -105,10 +101,6 @@ group by customer_id,product_name;
 | B           | curry        |
 | C           | ramen        |
 
-- Customer A's first order is curry and sushi.
-- Customer B's first order is curry.
-- Customer C's first order is ramen.
-
 ***
 
 ### 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
@@ -129,7 +121,6 @@ limit 1
 | ---------- | ------------ | -------------- |
 | 3          | ramen        | 8              |
 
-- Most purchased item on the menu is ramen which is 8 times.
 
 ***
 
@@ -156,8 +147,6 @@ where ordered_products=1;
 | B           | sushi        |
 | C           | ramen        |
 
-- Customer A and C's favourite item is ramen while customer B savours all items on the menu. 
-
 ***
 
 ### 6. Which item was purchased first by the customer after they became a member?
@@ -182,10 +171,6 @@ where c.date_joined=1 order by c.customer_id;
 | ----------- | ------------ |
 | A           | ramen        |
 | B           | sushi        |
-
-After becoming a member 
-- Customer A's first order was curry.
-- Customer B's first order was sushi.
 
 ***
 
@@ -213,9 +198,6 @@ where c.before_joined=1 order by c.customer_id;
 | A           | sushi        |
 | B           | curry        |
 
-Before becoming a member 
-- Customer A’s and B’s last order was sushi and curry.
-
 ***
 
 ### 8. What is the total items and amount spent for each member before they became a member?
@@ -238,10 +220,6 @@ order by c.customer_id asc ;
 | ----------- | ----- | --- |
 | A           | 2     | 25  |
 | B           | 3     | 40  |
-
-Before becoming a member
-- Customer A spent $25 on 2 items.
-- Customer B spent $40 on 3 items.
 
 ***
 
@@ -270,8 +248,6 @@ group by customer_id order by customer_id ;
 | A           | 860          |
 | B           | 940          |
 | C           | 360          |
-
-- Total points for customer A, B and C are 860, 940 and 360 respectivly.
 
 ***
 
@@ -306,7 +282,5 @@ group by c.customer_id;
 | ----------- | ----- |
 | A           | 1370  |
 | B           | 820   |
-
-- Total points for Customer A and B are 1370 and 820 respectivly.
 
 ***
