@@ -1,9 +1,45 @@
 # Case Study 1: Danny's Diner
 
+## Dataset
+
+### Sales Table ###
+
+| customer_id | order_date               | product_id |
+| ----------- | ------------------------ | ---------- |
+| A           | 2021-01-01T00:00:00.000Z | 1          |
+| A           | 2021-01-01T00:00:00.000Z | 2          |
+| A           | 2021-01-07T00:00:00.000Z | 2          |
+| A           | 2021-01-10T00:00:00.000Z | 3          |
+| A           | 2021-01-11T00:00:00.000Z | 3          |
+| A           | 2021-01-11T00:00:00.000Z | 3          |
+| B           | 2021-01-01T00:00:00.000Z | 2          |
+| B           | 2021-01-02T00:00:00.000Z | 2          |
+| B           | 2021-01-04T00:00:00.000Z | 1          |
+| B           | 2021-01-11T00:00:00.000Z | 1          |
+| B           | 2021-01-16T00:00:00.000Z | 3          |
+| B           | 2021-02-01T00:00:00.000Z | 3          |
+| C           | 2021-01-01T00:00:00.000Z | 3          |
+| C           | 2021-01-01T00:00:00.000Z | 3          |
+| C           | 2021-01-07T00:00:00.000Z | 3          |
+
+### Menu Table ###
+
+| product_id | product_name | price |
+| ---------- | ------------ | ----- |
+| 1          | sushi        | 10    |
+| 2          | curry        | 15    |
+| 3          | ramen        | 12    |
+
+### Members Table ###
+
+| customer_id | join_date                |
+| ----------- | ------------------------ |
+| A           | 2021-01-07T00:00:00.000Z |
+| B           | 2021-01-09T00:00:00.000Z |
+
+---
+
 ## Solution
-
-
-***
 
 ### 1. What is the total amount each customer spent at the restaurant?
 
@@ -38,10 +74,10 @@ group by customer_id;
 
 #### Answer:
 | customer_id | days_visited |
-| ----------- | ----------- |
-| A           | 4          |
-| B           | 6          |
-| C           | 2          |
+| ----------- | ------------ |
+| A           | 4            |
+| B           | 6            |
+| C           | 2            |
 
 - Customer A, B and C visited 4, 6 and 2 times respectivly.
 
@@ -62,11 +98,11 @@ group by customer_id,product_name;
 ````
 
 #### Answer:
-| customer_id | product_name | 
-| ----------- | -----------  |	
-| A           | curry        | 
-| A           | sushi        | 
-| B           | curry        | 
+| customer_id | product_name |
+| ----------- | ------------ |
+| A           | curry        |
+| A           | sushi        |
+| B           | curry        |
 | C           | ramen        |
 
 - Customer A's first order is curry and sushi.
@@ -89,10 +125,9 @@ limit 1
 
 
 #### Answer:
-| Product_name  | Times_Purchased | 
-| ----------- | ----------- |
-| ramen       | 8|
-
+| product_id | product_name | mostly_ordered |
+| ---------- | ------------ | -------------- |
+| 3          | ramen        | 8              |
 
 - Most purchased item on the menu is ramen which is 8 times.
 
@@ -113,13 +148,13 @@ where ordered_products=1;
 ````
 
 #### Answer:
-| Customer_id | Product_name | Count |
-| ----------- | ----------   |------------  |
-| A           | ramen        |  3   |
-| B           | sushi        |  2   |
-| B           | curry        |  2   |
-| B           | ramen        |  2   |
-| C           | ramen        |  3   |
+| customer_id | product_name |
+| ----------- | ------------ |
+| A           | ramen        |
+| B           | ramen        |
+| B           | curry        |
+| B           | sushi        |
+| C           | ramen        |
 
 - Customer A and C's favourite item is ramen while customer B savours all items on the menu. 
 
@@ -143,10 +178,10 @@ where c.date_joined=1 order by c.customer_id;
 
 
 #### Answer:
-| customer_id |  product_name |order_date
-| ----------- | ----------  |----------  |
-| A           |  curry        |2021-01-07 |
-| B           |  sushi        |2021-01-11 |
+| customer_id | product_name |
+| ----------- | ------------ |
+| A           | ramen        |
+| B           | sushi        |
 
 After becoming a member 
 - Customer A's first order was curry.
@@ -173,15 +208,12 @@ where c.before_joined=1 order by c.customer_id;
 ````
 
 #### Answer:
-| customer_id |product_name |order_date  |
-| ----------- | ----------  |---------- |
-| A           |  sushi      |2021-01-01 | 
-| A           |  curry      |2021-01-01 | 
-| B           |   sushi     |2021-01-04 |
-
+| customer_id | product_name |
+| ----------- | ------------ |
+| A           | sushi        |
+| B           | curry        |
 Before becoming a member 
-- Customer A’s last order was sushi and curry.
-- Customer B’s last order wassushi.
+- Customer A’s and B’s last order was sushi and curry.
 
 ***
 
@@ -201,10 +233,10 @@ order by c.customer_id asc ;
 
 
 #### Answer:
-| customer_id |Items | total_sales |
-| ----------- | ---------- |----------  |
-| A           | 2 |  25       |
-| B           | 3 |  40       |
+| customer_id | count | sum |
+| ----------- | ----- | --- |
+| A           | 2     | 25  |
+| B           | 3     | 40  |
 
 Before becoming a member
 - Customer A spent $25 on 2 items.
@@ -232,11 +264,11 @@ group by customer_id order by customer_id ;
 
 
 #### Answer:
-| customer_id | Points | 
-| ----------- | -------|
-| A           | 860 |
-| B           | 940 |
-| C           | 360 |
+| customer_id | total_points |
+| ----------- | ------------ |
+| A           | 860          |
+| B           | 940          |
+| C           | 360          |
 
 - Total points for customer A, B and C are 860, 940 and 360 respectivly.
 
@@ -269,10 +301,10 @@ group by c.customer_id;
 ````
 
 #### Answer:
-| Customer_id | Points | 
-| ----------- | ---------- |
-| A           | 1370 |
-| B           | 820 |
+| customer_id | total |
+| ----------- | ----- |
+| A           | 1370  |
+| B           | 820   |
 
 - Total points for Customer A and B are 1370 and 820 respectivly.
 
