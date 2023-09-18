@@ -1,7 +1,7 @@
 ## Case Study #1: Danny's Diner 
 <img src="https://user-images.githubusercontent.com/81607668/127727503-9d9e7a25-93cb-4f95-8bd0-20b87cb4b459.png" alt="Image" width="500" height="520">
 
-View the [**case study**](https://8weeksqlchallenge.com/case-study-1/) and my [**solution**](https://github.com/Sowmyad15/8_Week_SQL_Challenge/blob/main/Dannys_Diner/Danny_diner_Solution.md)
+View the [**case study**](https://8weeksqlchallenge.com/case-study-1/) and my [**solution**](https://github.com/Sowmyad15/8_Week_SQL_Challenge/blob/main/Dannys_Diner/)
 ### Introduction:
 Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favourite foods: sushi, curry and ramen.
 
