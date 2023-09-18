@@ -212,6 +212,7 @@ where c.before_joined=1 order by c.customer_id;
 | ----------- | ------------ |
 | A           | sushi        |
 | B           | curry        |
+
 Before becoming a member 
 - Customer A’s and B’s last order was sushi and curry.
 
