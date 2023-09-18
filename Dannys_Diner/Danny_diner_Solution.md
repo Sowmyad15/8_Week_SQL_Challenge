@@ -114,8 +114,6 @@ order by mostly_ordered desc
 limit 1
 ````
 
-
-
 #### Answer:
 | product_id | product_name | mostly_ordered |
 | ---------- | ------------ | -------------- |
